@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 
@@ -12,6 +12,8 @@ import { NgForm } from '@angular/forms';
   styleUrl: './contact.component.css',
 })
 export class ContactComponent implements OnInit {
+  lastname: any;
+  firstname: any;
   component() {}
 
   ngOnInit(): void {}

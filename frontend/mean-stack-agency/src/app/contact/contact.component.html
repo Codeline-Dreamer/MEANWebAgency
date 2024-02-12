@@ -21,10 +21,24 @@
               class="form-control"
               name="firstname"
               id="validationDefault01"
+              minlength="2"
               required
               [value]=""
               ngModel
+              #firstname="ngModel"
             />
+            <div
+              class="text-danger"
+              *ngIf="firstname.touched && firstname.errors?.['required']"
+            >
+              Last name is required
+            </div>
+            <div
+              class="text-danger"
+              *ngIf="firstname.touched && firstname.errors?.['minlength']"
+            >
+              Minumum 2 characters
+            </div>
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationDefault02">Last name</label>
@@ -33,10 +47,24 @@
               class="form-control"
               name="lastname"
               id="validationDefault02"
+              minlength="2"
               required
               [value]=""
               ngModel
+              #lastname="ngModel"
             />
+            <div
+              class="text-danger"
+              *ngIf="lastname.touched && lastname.errors?.['required']"
+            >
+              Last name is required
+            </div>
+            <div
+              class="text-danger"
+              *ngIf="lastname.touched && lastname.errors?.['minlength']"
+            >
+              Minumum 2 characters
+            </div>
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationDefault03">Phone</label>
@@ -44,11 +72,26 @@
               type="text"
               class="form-control"
               name="phone"
+              placeholder="10 digit mobile number"
               id="validationDefault03"
               required
+              minlength="10"
               [value]=""
               ngModel
+              #phone="ngModel"
             />
+            <div
+              class="text-danger"
+              *ngIf="phone.touched && phone.errors?.['required']"
+            >
+              Phone Number is required
+            </div>
+            <div
+              class="text-danger"
+              *ngIf="phone.touched && phone.errors?.['minlength']"
+            >
+              Minumum 10 characters
+            </div>
           </div>
         </div>
         <div class="form-group">
