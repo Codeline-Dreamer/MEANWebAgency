@@ -13,6 +13,9 @@
           <h1 class="mt-0 text-success" *ngIf="submitted">
             Added Successfully
           </h1>
+          <p class="mt-0 alert alert-danger" *ngIf="emailError">
+            Error: {{ emailErrorMsg }}
+          </p>
           <form
             [formGroup]="providersForm"
             class="user"
