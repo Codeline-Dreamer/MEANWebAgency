@@ -1,6 +1,3 @@
-Certainly! Below is a template for a README file for your Angular project, which you can customize further based on the specifics of your app:
-
-```markdown
 # MEAN Web Agency
 
 Welcome to the repository for the MEAN Web Agency - a full-stack application designed to showcase the capabilities of the MEAN stack (MongoDB, Express.js, Angular, and Node.js). This application serves as a practical learning journey through modern web development practices and technologies.
