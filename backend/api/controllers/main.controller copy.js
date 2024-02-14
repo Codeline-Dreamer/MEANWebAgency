@@ -92,8 +92,8 @@ module.exports.readAll = function (req, res) {
 // url: /api/providers/id(123)
 module.exports.readOne = function (req, res) {
   try {
-    let id = req.params.id;
-    Provider.find({ id: id })
+    let id = new ObjectId(req.params.id);
+    Provider.find({ _id: id })
       .then((result) => {
         if (isEmptyList(result)) {
           res.status(404);
@@ -113,9 +113,9 @@ module.exports.readOne = function (req, res) {
 // url: /api/providers/id(123)
 module.exports.update = function (req, res) {
   try {
-    let id = req.params.id;
+    let id = new ObjectId(req.params.id);
     let provider = req.body;
-    Provider.findOneAndUpdate({ id: id }, provider, { new: true })
+    Provider.findOneAndUpdate({ _id: id }, provider, { new: true })
       .then((result) => {
         if (isEmptyList(result)) {
           res.status(404);
@@ -150,8 +150,8 @@ module.exports.update = function (req, res) {
 // url: /api/providers/id(123)
 module.exports.deleteOne = function (req, res) {
   try {
-    let id = req.params.id;
-    Provider.findOneAndDelete({ id: id })
+    let id = new ObjectId(req.params.id);
+    Provider.findOneAndDelete({ _id: id })
       .then((result) => {
         if (isEmptyList(result)) {
           res.status(404);
