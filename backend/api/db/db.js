@@ -8,7 +8,7 @@ const url = "mongodb://127.0.0.1:27017/provider_db";
 mongoose
   .connect(url)
   .then((result) => {
-    console.log("Successfull Connection !!! "); // call the results like ("Successfull Connection !!!", results) then the results will be seen in terminal
+    console.log("Successfull Connection running backend !!! "); // call the results like ("Successfull Connection !!!", results) then the results will be seen in terminal
   })
   .catch((error) => console.log(error));
 

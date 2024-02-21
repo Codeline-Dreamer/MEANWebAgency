@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProviderClass } from '../../models/providers.class';
+import { ProviderService } from '../../services/provider.service';
 
 @Component({
   selector: 'app-edit-providers',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './edit-providers.component.html',
   styleUrl: './edit-providers.component.css',
 })
-export class EditProvidersComponent {
+export class EditProvidersComponent implements OnInit {
   submitted = false;
   emailError: boolean = false;
   emailErrorMsg: string = 'Invalid email. Try again or contact us.';
@@ -15,6 +18,9 @@ export class EditProvidersComponent {
   providers: ProviderClass[] = [];
   provider = new ProviderClass();
   providersForm: FormGroup = new FormGroup({});
+
+  id: number; //Service provider's Id from URL
+  email: string; //Service provider's default email
 
   constructor(private providerService: ProviderService) {}
 

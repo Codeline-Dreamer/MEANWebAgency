@@ -34,4 +34,9 @@ export class ProviderService {
   addProvider(newProvider: ProviderClass): Observable<any> {
     return this.http.post(this.apiUrl, newProvider);
   }
+
+  //Delete a single record
+  deleteProvider(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }
